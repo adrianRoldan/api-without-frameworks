@@ -135,7 +135,7 @@ Users can have none or many contacts in their address book.
 
 
 ##### Conceptual diagram
-
+<br>
 <p align="center">
     <img src="conceptual_model_API_users.png" />
 </p>
