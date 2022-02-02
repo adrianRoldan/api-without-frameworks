@@ -1,0 +1,6 @@
+/node_modules
+/vendor
+.idea
+/config/database.php
+.phpunit.result.cache
+

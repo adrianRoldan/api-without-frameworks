@@ -1,0 +1,158 @@
+{
+	"info": {
+		"_postman_id": "98fbca01-78eb-4c82-8d05-d5e55214ffeb",
+		"name": "UserContactsAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Crear usuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"lastName\": \"Roldan\",\r\n    \"phone\": \"65sd74784\",\r\n    \"name\"  : \"Paqui\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/create/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"create",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener contactos usuario",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/user/contacts/?userId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"contacts",
+						""
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear contactos usuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\": 2,\r\n    \"contacts\": [\r\n        {\r\n            \"contactName\": \"Paco\",\r\n            \"phone\": 639916718\r\n        },\r\n        {\r\n            \"contactName\": \"Adela\",\r\n            \"phone\": 634716718\r\n        },\r\n        {\r\n            \"contactName\": \"Angel\",\r\n            \"phone\": 639916712\r\n        },\r\n        {\r\n            \"contactName\": \"Mariano\",\r\n            \"phone\": 647916718\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/contacts/create/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"contacts",
+						"create",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar contactos usuario",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\": 2,\r\n    \"contacts\": [\r\n        {\r\n            \"contactName\": \"Martin\",\r\n            \"phone\": 939916718\r\n        },\r\n        {\r\n            \"contactName\": \"Guillermo\",\r\n            \"phone\": 934512114\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/contacts/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"contacts",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener contactos comunes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/user/contacts/common?userId2=2&userId1=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"contacts",
+						"common"
+					],
+					"query": [
+						{
+							"key": "userId2",
+							"value": "2"
+						},
+						{
+							"key": "userId1",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

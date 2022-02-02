@@ -1,0 +1,36 @@
+version: '3.9'
+
+networks:
+  api-users:
+
+services:
+
+  database:
+    image: mariadb:10.6
+    container_name: api-users-mariadb
+    volumes:
+      - .:/docker-entrypoint-initdb.d
+    environment:
+      MYSQL_DATABASE: "api-users"
+      MYSQL_USER: "api"
+      MYSQL_PASSWORD: "api"
+      MYSQL_ROOT_PASSWORD: "root"
+    ports:
+      - "3306:3306"
+    restart: always
+    networks:
+      - api-users
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: api-users-apache-php
+    ports:
+      - "3000:80"
+    volumes:
+      - .:/var/www/html
+    depends_on:
+      - database
+    networks:
+      - api-users
